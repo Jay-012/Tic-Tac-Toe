@@ -1,0 +1,125 @@
+:root {
+    --bg-color: #FBFBFB;
+    --text-color: #333;
+    --board-bg: #333;
+    --board-border: transparent;
+    --cell-bg: #fff;
+    --cell-hover: #eee;
+    --btn-bg: #333;
+    --btn-hover: #555;
+}
+
+.dark-mode {
+    --bg-color: #161616;
+    --text-color: #fff;
+    --board-bg: #555;
+    --board-border: transparent;
+    --cell-bg: #444;
+    --cell-hover: #666;
+    --btn-bg: #444;
+    --btn-hover: #666;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    background-color:rgb(255, 255, 255);
+    border: 3px solid var(--board-border);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+body:not(.dark-mode) .board {
+    background-color: #000000;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: var(--cell-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: var(--cell-hover);
+}
+
+.cell.x {
+    color: #e74c3c;
+}
+
+.cell.o {
+    color: #3498db;
+}
+
+.restart-btn, .mode-toggle {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: var(--btn-bg);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.restart-btn:hover, .mode-toggle:hover {
+    background-color: var(--btn-hover);
+}
+
+.mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+@media (max-width: 500px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}
