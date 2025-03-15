@@ -40,7 +40,7 @@ A simple and interactive Tic-Tac-Toe game built using HTML, CSS, and JavaScript.
 
 ## Screenshots
 
-_(Add screenshots of the game interface if needed)_
+![image alt](https://github.com/Jay-012/Tic-Tac-Toe/blob/1f43135faf7e03e106280fbcb1dbd7277f78354c/Screenshot%202025-03-15%20173826.png)
 
 ## Author
 
